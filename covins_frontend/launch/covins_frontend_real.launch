@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+<arg name="ag_n" default="0" />
+<arg name="cam_topic" default="/camera/infra1/image_rect_raw" />
+<arg name="odom_topic" default="/vins_fusion/odometry" />
+<arg name="uwb_topic" default="/uwb$(arg ag_n)" />
+<arg name="config_file" default="$(find covins_frontend)/config/real.yaml" />
+
+<node pkg="covins_frontend" type="covins_frontend_node" name="frontend_ag$(arg ag_n)" output="screen">
+    <param name="config_file" type="str" value="$(arg config_file)" />
+    <remap from="/camera/image_raw" to="$(arg cam_topic)"/>
+    <remap from="/cam_odom" to="$(arg odom_topic)"/>
+    <remap from="/uwb" to="$(arg uwb_topic)"/>
+</node>
+
+</launch>
