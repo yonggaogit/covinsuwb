@@ -110,7 +110,7 @@ sudo chmod 777 ./src/covinsuwb/simulate_shfiles/frontend.sh
 cd ~/project/covinsuwb_ws
 ./src/covinsuwb/simulate_shfiles/frontend.sh 1
 ```
-
+- the vins configuration wait to publish, please wait....
 ### 4.2 Real Experiment
 - change the covins_comm/config/config_comm.yaml(sys.server_ip:the ip of your server agent)
 ```shell
@@ -137,12 +137,14 @@ cd ~/project/covinsuwb_ws
 sudo chmod 777 ./src/covinsuwb/real_shfiles/uwb.sh
 ./src/covinsuwb/real_shfiles/uwb.sh 0
 ```
-- 
+- the vins configuration wait to publish, please wait....
 ## 5 Dataset
 ### 5.1 EuROC
-- The is the original [EuROC](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets) dataset, but the dataset is single UAV dataset
+- The is the original [EuROC](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets) dataset, but the dataset is single UAV dataset.You need merge some data and simulate uwb range data, contact me.
+- usage to be continue
 ### 5.2 S3E
 - [S3E](https://github.com/PengYu-Team/S3E) 
+- usage to be continue
 
 ## 6 Evaluation
 - install [evo tools](https://github.com/MichaelGrupp/evo)
@@ -152,3 +154,5 @@ sudo chmod 777 ./src/covinsuwb/real_shfiles/uwb.sh
     ```shell
     evo_ape euroc KF_0_ftum.csv gt_data.csv -vas
     ```
+## 7 Result
+- to be continue
