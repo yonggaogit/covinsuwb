@@ -37,7 +37,7 @@ git clone https://github.com/yonggaogit/covinsuwb.git
 ### 2.3 Third-party toolkits
 - complile serial
 ```shell
-cd ~/project/covinsuwb_ws/src/covinsuwb/3rd_party/serial
+cd ~/project/covinsuwb_ws/src/covinsuwb/3rd_party/serial_module
 make
 make test
 sudo make install
@@ -45,7 +45,7 @@ sudo make install
 
 - compile glog
 ```shell
-cd ~/project/covinsuwb_ws/src/covinsuwb/3rd_party/glog
+cd ~/project/covinsuwb_ws/src/covinsuwb/3rd_party/glog_module
 sudo chmod 777 autogen.sh
 sudo chmod 777 configure
 ./autogen.sh && ./configure && make && sudo make install
