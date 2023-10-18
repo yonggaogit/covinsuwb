@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(covins_backend)
 
-find_package(catkin_simple REQUIRED)
+find_package(catkin_simple REQUIRED
+            eigen_conversions
+            geometry_msgs
+            message_generation            
+)
 catkin_simple(ALL_DEPS_REQUIRED)
 
 add_compile_options(-std=c++1z -pthread -pipe -Wall -Wextra -pedantic -Wno-unused-parameter -Wno-unused-function -Wno-vla)

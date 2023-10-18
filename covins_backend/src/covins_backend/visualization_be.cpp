@@ -34,7 +34,11 @@
 // Thirdparty
 #include <pcl/point_cloud.h>
 #include <pcl_conversions/pcl_conversions.h>
-
+#include <eigen_conversions/eigen_msg.h>
+#include <tf/tf.h>
+#include <tf_conversions/tf_eigen.h>
+#include <geometry_msgs/Quaternion.h>
+#include <geometry_msgs/QuaternionStamped.h>
 namespace covins {
 
 Visualizer::Visualizer(std::string topic_prefix)
@@ -405,21 +409,22 @@ auto Visualizer::PubTrajectories()->void {
         this_pose_stamped.pose.position.z = T(2, 3);
 
 
-        // geometry_msgs::Quaternion quat_msg;
-        // Eigen::Matrix3d rotation_matrix;
-        // rotation_matrix << T(0,0), T(0,1), T(0,2),
-		//                    T(1,0), T(1,1), T(1,2),
-		//                    T(2,0), T(2,1), T(2,2);
-        // Eigen::Quaternionf quaternion( rotation_matrix );
-        // tf::quaternionEigenToMsg( quaternion, quat_msg);
+        geometry_msgs::Quaternion quat_msg;
+        Eigen::Matrix3d rotation_matrix;
+        rotation_matrix << T(0,0), T(0,1), T(0,2),
+		                   T(1,0), T(1,1), T(1,2),
+		                   T(2,0), T(2,1), T(2,2);
 
-        // this_pose_stamped.pose.orientation.x = quat_msg.x;
-        // this_pose_stamped.pose.orientation.y = quat_msg.y;
-        // this_pose_stamped.pose.orientation.z = quat_msg.z;
-        // this_pose_stamped.pose.orientation.w = quat_msg.w;
+        Eigen::Quaterniond quaternion( rotation_matrix );
+        tf::quaternionEigenToMsg( quaternion, quat_msg );
 
-        // this_pose_stamped.header.stamp=ros::Time::now();
-        // this_pose_stamped.header.frame_id="odom";
+        this_pose_stamped.pose.orientation.x = quat_msg.x;
+        this_pose_stamped.pose.orientation.y = quat_msg.y;
+        this_pose_stamped.pose.orientation.z = quat_msg.z;
+        this_pose_stamped.pose.orientation.w = quat_msg.w;
+
+        this_pose_stamped.header.stamp=ros::Time::now();
+        this_pose_stamped.header.frame_id="odom";
 
         msgs[kf->id_.second].points.push_back(p);
         msgs_nav[kf->id_.second].poses.push_back(this_pose_stamped);
