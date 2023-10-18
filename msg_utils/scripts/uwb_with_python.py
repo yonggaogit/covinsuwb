@@ -111,5 +111,4 @@ if __name__ == "__main__":
     args = parse_args()
     print(args)
     print(args.n)
-    simulate_uwb(args.bagfile,
-              outfile=args.o, noise=args.n)
+    simulate_uwb(args.bagfile, outfile=args.o, noise=args.n)

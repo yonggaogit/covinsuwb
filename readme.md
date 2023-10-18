@@ -142,6 +142,7 @@ sudo chmod 777 ./src/covinsuwb/real_shfiles/uwb.sh
 ### 5.1 EuROC
 - The is the original [EuROC](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets) dataset, but the dataset is single UAV dataset.You need merge some data and simulate uwb range data, contact me.
 - usage to be continue
+- Beacuse the timestamp has been modified, so we need use `rostopic echo -b MH_01_02_with_uwb.bag -p /vicon/pose0 > KF_0_ftum.csv` to get the ground truth data.
 ### 5.2 S3E
 - [S3E](https://github.com/PengYu-Team/S3E) 
 - usage to be continue
@@ -152,7 +153,11 @@ sudo chmod 777 ./src/covinsuwb/real_shfiles/uwb.sh
     - you can change the option `sys.trajectory_format` in the file named `config_backend.yaml`(covinsuwb/covins_backend/config) to change the output file type(ftum or euroc).
 - for multi uav localization result, you need use cat to merge all the csv file, and use the evo instruction
     ```shell
-    evo_ape euroc KF_0_ftum.csv gt_data.csv -vas
+    # only compare the translation part
+    evo_ape tum KF_0_ftum.csv gt_data.csv -pvas
+
+    # both translation and rotation are compared
+    evo_ape tum KF_0_ftum.csv gt_data.csv -pvas -r full
     ```
 ## 7 Result
 - to be continue
