@@ -1,12 +1,13 @@
-<arg name="ag_n" default="1" />
+<?xml version="1.0"?>
 
 <launch>
+  <arg name="ag_n" default="1" />
   <node pkg="msg_utils" name="sender" type="sender.py" output="screen">
     <param name="ardrone1_ip" value="192.168.1.102" type="string"/>
     <param name="ardrone1_port" value="5555" type="int"/>
-    <param name="ardrone2_ip" value="192.168.1.102" type="string"/>
+    <param name="ardrone2_ip" value="192.168.1.105" type="string"/>
     <param name="ardrone2_port" value="5555" type="int"/>
-    <param name="ardrone3_ip" value="192.168.1.102" type="string"/>
+    <param name="ardrone3_ip" value="192.168.1.107" type="string"/>
     <param name="ardrone3_port" value="5555" type="int"/>
     
     <param name="flag" value="$(arg ag_n)" type="int"/>

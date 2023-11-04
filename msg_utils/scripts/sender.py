@@ -14,6 +14,8 @@ if __name__ == '__main__':
     ip1, port1 = rospy.get_param('~ardrone1_ip'), rospy.get_param('~ardrone1_port')
     ip2, port2 = rospy.get_param('~ardrone2_ip'), rospy.get_param('~ardrone2_port')
     ip3, port3 = rospy.get_param('~ardrone3_ip'), rospy.get_param('~ardrone3_port')
+    # print( type( ip1 ), type( port1 ) )
+    # print(ip1, port1)
     tcp_client_socket1.connect( ( ip1, port1 ) )
     tcp_client_socket2.connect( ( ip2, port2 ) )
     tcp_client_socket3.connect( ( ip3, port3 ) )

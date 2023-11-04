@@ -23,7 +23,7 @@ def talker():
     tcp_server_socket.listen(128)
     client_socket, clientAddr = tcp_server_socket.accept()
 
-    pub = rospy.Publisher('/move_base_simple/goal', Image, queue_size=10)
+    pub = rospy.Publisher('/move_base_simple/goal', PoseStamped, queue_size=10)
 
 
     rate = rospy.Rate(40)
