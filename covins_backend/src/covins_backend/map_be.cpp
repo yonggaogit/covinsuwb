@@ -1092,7 +1092,7 @@ auto Map::WriteStateToCsvTUM(const std::string& filename, const size_t client_id
             const Eigen::Matrix4d Tws = kf->GetPoseTws();
             const Eigen::Quaterniond q(Tws.block<3,3>(0,0));
 
-            keyframes_file << std::setprecision(25) << stamp << " ";
+            keyframes_file << std::setprecision(25) << stamp * 1e9f  << " ";
             keyframes_file << Tws(0,3) << " " << Tws(1,3) << " " << Tws(2,3) << " ";
             keyframes_file << q.x() << " " << q.y() << " " << q.z() << " " << q.w() 
             << std::endl;

@@ -11,6 +11,9 @@ Panels:
         - /Marker_be1/Namespaces1
         - /TF1
         - /TF1/Frames1
+        - /Image11
+        - /Image21
+        - /covins_tarj11
       Splitter Ratio: 0.5
     Tree Height: 179
   - Class: rviz/Selection
@@ -30,7 +33,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: Image1
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -69,7 +72,14 @@ Visualization Manager:
       Marker Topic: /covins_markers_be
       Name: Marker_be
       Namespaces:
-        {}
+        KFs0_be: true
+        KFs1_be: true
+        KFs2_be: true
+        "LoopEdges_inter_0_be\n": true
+        "LoopEdges_intra_0_be\n": true
+        Traj0_be: true
+        Traj1_be: true
+        Traj2_be: true
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -159,7 +169,7 @@ Visualization Manager:
       Value: true
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /cam1/image_raw0
+      Image Topic: /cam0/image_raw1
       Max Value: 1
       Median window: 5
       Min Value: 0
@@ -185,7 +195,7 @@ Visualization Manager:
       Buffer Length: 1
       Class: rviz/Path
       Color: 239; 41; 41
-      Enabled: false
+      Enabled: true
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
       Length: 0.30000001192092896
@@ -204,12 +214,12 @@ Visualization Manager:
       Shaft Length: 0.10000000149011612
       Topic: /covins_traj_1
       Unreliable: false
-      Value: false
+      Value: true
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
       Color: 25; 255; 0
-      Enabled: false
+      Enabled: true
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
       Length: 0.30000001192092896
@@ -228,12 +238,12 @@ Visualization Manager:
       Shaft Length: 0.10000000149011612
       Topic: /covins_traj_2
       Unreliable: false
-      Value: false
+      Value: true
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
       Color: 52; 101; 164
-      Enabled: false
+      Enabled: true
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
       Length: 0.30000001192092896
@@ -252,7 +262,7 @@ Visualization Manager:
       Shaft Length: 0.10000000149011612
       Topic: /covins_traj_3
       Unreliable: false
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 0; 0; 0
@@ -281,7 +291,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 12.421725273132324
+      Distance: 13.722436904907227
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -297,9 +307,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.20479705929756165
+      Pitch: 1.1197967529296875
       Target Frame: <Fixed Frame>
-      Yaw: 5.200306415557861
+      Yaw: 1.3371226787567139
     Saved: ~
 Window Geometry:
   Displays:

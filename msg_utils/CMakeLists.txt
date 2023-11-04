@@ -211,6 +211,15 @@ catkin_install_python(PROGRAMS scripts/uwb.py
 catkin_install_python(PROGRAMS scripts/transfer_uwb.py
         DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
         )
+catkin_install_python(PROGRAMS scripts/gps_transfer.py
+        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 catkin_install_python(PROGRAMS scripts/relative_locate.py
         DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-        )
+)
+catkin_install_python(PROGRAMS scripts/receiver.py
+        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+catkin_install_python(PROGRAMS scripts/sender.py
+        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)

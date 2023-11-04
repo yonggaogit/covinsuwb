@@ -10,7 +10,7 @@ sys.threads_server: 8
 sys.covis_thres: 10 # Threshold for min. number of shared edges to include a covisibility edge
 
 # Format for the trajectory output file
-sys.trajectory_format: 'EUROC' # {EUROC|TUM}
+sys.trajectory_format: 'TUM' # {EUROC|TUM}
 # EUROC: EuRoC format - stamp[ns], tx, ty, tz, qw, qx, qy, qz
 # TUM: TUM format - stamp[s] tx ty tz qx qy qz qw
 
