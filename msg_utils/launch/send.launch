@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
-  <arg name="ag_n" default="1" />
+  <arg name="ag_n" default="0" />
   <node pkg="msg_utils" name="sender" type="sender.py" output="screen">
     <param name="ardrone1_ip" value="192.168.1.102" type="string"/>
     <param name="ardrone1_port" value="5555" type="int"/>

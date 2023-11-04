@@ -5,6 +5,7 @@ from sensor_msgs.msg import Image
 from geometry_msgs.msg import PoseStamped
 import socket
 import struct
+import os
 
 
 def talker():
@@ -42,6 +43,8 @@ def talker():
 
             if recv_data_whole.__len__() == struct.calcsize('i'):
                 flag = struct.unpack('i',recv_data_whole)
+                if flag == 0:
+                    os.system('roslaunch ego_planner single_run_in_exp.launch')
                 if flag == 1:
                     goal_msg.pose.position.x = x1
                     goal_msg.pose.position.y = y1
