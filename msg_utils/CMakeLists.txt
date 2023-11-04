@@ -217,9 +217,9 @@ catkin_install_python(PROGRAMS scripts/gps_transfer.py
 catkin_install_python(PROGRAMS scripts/relative_locate.py
         DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
-catkin_install_python(PROGRAMS scripts/receiver.py
+catkin_install_python(PROGRAMS scripts/sender.py
         DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
-catkin_install_python(PROGRAMS scripts/sender.py
+catkin_install_python(PROGRAMS scripts/receiver.py
         DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

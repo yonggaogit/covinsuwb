@@ -1,7 +1,7 @@
 <launch>
     <node pkg="msg_utils" name="receiver" type="receiver.py" output="screen">
-        <param name="ardrone_ip" value="192.168.1.101" type="string" />
-        <param name="ardrone_port" value="6666" type="int" />
+        <param name="ardrone_ip" value="192.168.1.102" type="string" />
+        <param name="ardrone_port" value="5555" type="int" />
         <param name="x1" value="5" type="int" />
         <param name="y1" value="-5" type="int" />
         <param name="x2" value="10" type="int" />

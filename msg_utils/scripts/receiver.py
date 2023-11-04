@@ -1,10 +1,12 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # license removed for brevity
 import rospy
 from sensor_msgs.msg import Image
-from geometry_msgs import PoseStamped
+from geometry_msgs.msg import PoseStamped
 import socket
 import struct
+import os
+
 
 
 def talker():
@@ -23,7 +25,7 @@ def talker():
     tcp_server_socket.listen(128)
     client_socket, clientAddr = tcp_server_socket.accept()
 
-    pub = rospy.Publisher('/move_base_simple/goal', Image, queue_size=10)
+    pub = rospy.Publisher('/move_base_simple/goal', PoseStamped, queue_size=10)
 
 
     rate = rospy.Rate(40)
@@ -42,7 +44,9 @@ def talker():
 
             if recv_data_whole.__len__() == struct.calcsize('i'):
                 flag = struct.unpack('i',recv_data_whole)
-                if flag == 1:
+                if flag == 0:
+                    os.system('roslaunch ego_planner single_run_in_exp.launch')
+                elif flag == 1:
                     goal_msg.pose.position.x = x1
                     goal_msg.pose.position.y = y1
                     goal_msg.pose.position.z = 1.0
